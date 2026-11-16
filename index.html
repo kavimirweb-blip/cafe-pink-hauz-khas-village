@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Café Pink | Hauz Khas Village, Delhi</title>
+<meta name="description" content="Café Pink by The Bay, Hauz Khas Village. Pink walls, a golden-hour terrace, coffee and food. Book a table on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+/* Brief: Café Pink by The Bay, Hauz Khas Village. Pink walls, graffiti, a terrace that goes gold at sunset. Young, photographed, social.
+   Idea: the café changes with the hour. Pick brunch, golden hour or after dark and the whole page re-tints.
+   Opening: the neon sign flickers on. */
+:root{
+  --pink:#e2336f; --blush:#f8d3de; --cream:#fff5ee; --wine:#3a0f23; --ink:#2a1420; --gold:#ffb257; --mute:#7d5b69;
+  --serif:'Fraunces',Georgia,serif; --sans:'Outfit',system-ui,sans-serif; --script:'Pinyon Script',cursive;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin:0 auto}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);font-weight:500}
+.eyebrow b{font-weight:500;opacity:.55;margin-right:.6em}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(2.2rem,5vw,3.9rem)}
+h1 em,h2 em{font-style:italic;color:var(--pink)}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.7em;border-radius:99px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:transform .3s var(--ease),background .3s,color .3s}
+.btn-pink{background:var(--pink);color:#fff}.btn-pink:hover{background:#c71f5a;transform:translateY(-2px)}
+.btn-line{border:1.5px solid currentColor}.btn-line:hover{background:rgba(255,255,255,.35);transform:translateY(-2px)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* loader: neon sign */
+#loader{position:fixed;inset:0;z-index:200;background:#14060f;display:grid;place-items:center;transition:opacity .9s .1s,visibility .9s .1s}
+#loader.off{opacity:0;visibility:hidden}
+.neon{font-family:var(--script);font-size:clamp(4.5rem,16vw,11rem);color:#ffd0e0;text-shadow:0 0 6px #ff5c9a,0 0 22px #ff2f7e,0 0 60px #ff2f7e,0 0 110px #c2185b;line-height:1;animation:flick 2.2s steps(1) forwards;opacity:.08}
+.neon small{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.5em;text-transform:uppercase;text-align:center;color:#ffd0e0;text-shadow:0 0 8px #ff2f7e;margin-top:.8rem;opacity:.9}
+@keyframes flick{0%{opacity:.08}8%{opacity:1}12%{opacity:.1}18%{opacity:1}22%{opacity:.25}30%{opacity:1}100%{opacity:1}}
+#skip{position:absolute;right:20px;bottom:20px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#ffd0e0;opacity:.6}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:16px 0;transition:background .4s,padding .4s,color .4s}
+nav.s{background:rgba(255,245,238,.9);backdrop-filter:blur(12px);padding:10px 0;box-shadow:0 1px 0 rgba(58,15,35,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--script);font-size:2rem;text-decoration:none;color:var(--pink);line-height:1}
+nav ul{display:flex;gap:28px;list-style:none;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+nav ul a{text-decoration:none;opacity:.8}nav ul a:hover{opacity:1;color:var(--pink)}
+nav .btn{padding:.7em 1.3em;font-size:.7rem}
+
+/* hero */
+.hero{position:relative;background:var(--blush);padding:120px 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-12%;top:-20%;width:62vw;height:62vw;border-radius:50%;background:radial-gradient(circle,rgba(255,178,87,.55),rgba(255,178,87,0) 64%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;min-height:calc(100svh - 200px)}
+.hero h1{font-size:clamp(3.2rem,7.6vw,6.8rem);font-weight:400}
+.hero h1 span{display:block}
+.hero .sub{max-width:28em;margin:24px 0 32px;font-size:1.06rem;color:#5a3a48}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.chips span{padding:.5em 1.05em;border-radius:99px;background:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.06em}
+.chips b{color:var(--pink);font-weight:500}
+.arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 20px 20px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(58,15,35,.55);border:8px solid #fff6f0}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.sign{position:absolute;left:50%;top:9%;transform:translateX(-50%);font-family:var(--script);font-size:clamp(2.6rem,5vw,4.2rem);color:#ffe3ec;text-shadow:0 0 4px #ff5c9a,0 0 16px #ff2f7e,0 0 40px #ff2f7e;white-space:nowrap;animation:glow 4s ease-in-out infinite alternate;z-index:2;line-height:1}
+@keyframes glow{0%,92%{opacity:1}94%{opacity:.5}96%{opacity:1}98%{opacity:.6}100%{opacity:1}}
+.badge{position:absolute;left:-18px;bottom:36px;background:var(--cream);padding:14px 18px;border-radius:16px;box-shadow:0 18px 40px -16px rgba(58,15,35,.5);font-size:.8rem;line-height:1.3;z-index:3}
+.badge b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--pink)}
+.scal{position:absolute;left:0;right:0;bottom:-1px;height:34px;background:radial-gradient(circle at 18px 0,transparent 17px,var(--cream) 18px) 0 0/36px 34px repeat-x}
+
+/* hour */
+.hour{padding:100px 0;background:var(--hbg,#fde6d6);color:var(--hink,#2a1420);transition:background 1s,color 1s;position:relative;overflow:hidden}
+.hour[data-h="0"]{--hbg:#fde6d6;--hink:#2a1420;--hac:#e2336f}
+.hour[data-h="1"]{--hbg:#ffb257;--hink:#3a1a05;--hac:#a8123f}
+.hour[data-h="2"]{--hbg:#1b0b1c;--hink:#ffe8f0;--hac:#ff5c9a}
+.hour .eyebrow,.hour h2 em{color:var(--hac)}
+.sky{position:relative;height:130px;border-radius:999px;margin:0 0 50px;overflow:hidden;background:linear-gradient(90deg,#ffe9dc,#ffd6b0);transition:background 1s}
+.hour[data-h="1"] .sky{background:linear-gradient(90deg,#ffcf86,#ff8a4c 60%,#c8365a)}
+.hour[data-h="2"] .sky{background:linear-gradient(90deg,#2a1230,#1a0a1f);box-shadow:inset 0 0 60px rgba(255,92,154,.3)}
+.orb{position:absolute;top:50%;width:84px;height:84px;margin-top:-42px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fffbe6,#ffd36a 55%,#ffb257);box-shadow:0 0 50px 14px rgba(255,200,100,.7);transition:left 1.2s var(--ease),background 1s,box-shadow 1s}
+.hour[data-h="0"] .orb{left:18%}.hour[data-h="1"] .orb{left:52%;background:radial-gradient(circle at 35% 35%,#fff1d0,#ff9a4a 60%,#e2336f);box-shadow:0 0 70px 24px rgba(255,120,70,.7)}
+.hour[data-h="2"] .orb{left:82%;background:radial-gradient(circle at 35% 35%,#fff,#f1d9e6 60%,#d9b3cc);box-shadow:0 0 40px 10px rgba(255,200,230,.4)}
+.stars{position:absolute;inset:0;opacity:0;transition:opacity 1s;background-image:radial-gradient(2px 2px at 12% 30%,#fff,transparent),radial-gradient(1.5px 1.5px at 30% 70%,#fff,transparent),radial-gradient(2px 2px at 55% 25%,#fff,transparent),radial-gradient(1.5px 1.5px at 70% 60%,#fff,transparent),radial-gradient(2px 2px at 92% 35%,#fff,transparent),radial-gradient(1.5px 1.5px at 40% 40%,#ffd0e0,transparent)}
+.hour[data-h="2"] .stars{opacity:1}
+.hgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}
+.times{display:flex;gap:8px;margin:26px 0;flex-wrap:wrap}
+.times button{padding:.7em 1.3em;border-radius:99px;border:1.5px solid currentColor;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;opacity:.65;transition:.3s}
+.times button[aria-pressed=true]{background:var(--hac);border-color:var(--hac);color:#fff;opacity:1}
+.hcopy h3{font-size:clamp(2rem,4vw,3rem);margin-bottom:12px;min-height:2.1em}
+.hcopy p{max-width:30em;opacity:.85;min-height:4.6em}
+.hcopy .btn{margin-top:22px;background:var(--hac);color:#fff}
+.hphoto{position:relative;aspect-ratio:1;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(0,0,0,.55)}
+.hphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1s,transform 1.6s var(--ease)}
+.hphoto img.on{opacity:1;transform:none}
+
+/* menu */
+.sec{padding:100px 0}
+.head{margin-bottom:46px}
+.mgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.tabs{display:flex;gap:8px;margin:24px 0}
+.tabs button{padding:.65em 1.25em;border-radius:99px;border:1.5px solid rgba(58,15,35,.25);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:.3s}
+.tabs button[aria-pressed=true]{background:var(--wine);color:#fff;border-color:var(--wine)}
+.mlist{list-style:none}
+.mlist li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(58,15,35,.16);font-family:var(--serif);font-size:1.4rem}
+.mlist li:last-child{border-bottom:1px solid rgba(58,15,35,.16)}
+.mlist small{font-family:var(--sans);font-size:.78rem;color:var(--mute);align-self:center;text-align:right}
+.note{font-size:.8rem;color:var(--mute);margin-top:14px}
+.mphoto{aspect-ratio:1;border-radius:999px 999px 24px 24px;overflow:hidden;position:relative;box-shadow:0 30px 60px -30px rgba(58,15,35,.5)}
+.mphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
+.mphoto img.on{opacity:1}
+
+/* space */
+.space{background:var(--wine);color:var(--cream)}
+.space .eyebrow{color:#ff8fb6}.space h2 em{color:#ff8fb6}
+.sgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.pair{position:relative;aspect-ratio:1;max-width:560px}
+.pair img{position:absolute;object-fit:cover;border-radius:18px;box-shadow:0 24px 50px -22px #000}
+.pair .a{left:0;top:0;width:68%;height:80%}
+.pair .b{right:0;bottom:0;width:52%;height:56%;border:8px solid var(--wine)}
+.corners{list-style:none;margin:28px 0 0;display:grid;gap:12px}
+.corners li{display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:1.02rem}
+.corners li::before{content:"✦";color:#ff8fb6}
+
+/* occasions */
+.occ{background:var(--blush)}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.opts{display:grid;gap:22px;margin-top:26px}
+.lab{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:10px;font-weight:500}
+.cl{display:flex;flex-wrap:wrap;gap:9px}
+.chip{padding:.6em 1.15em;border-radius:99px;border:1.5px solid rgba(58,15,35,.25);font-size:.88rem;transition:.3s;background:rgba(255,255,255,.4)}
+.chip[aria-pressed=true]{background:var(--pink);color:#fff;border-color:var(--pink)}
+.qty{display:flex;align-items:center;gap:16px}
+.qty input{flex:1;accent-color:var(--pink)}
+.qty b{font-family:var(--serif);font-size:2rem;font-weight:400;min-width:2.2em;text-align:right}
+.field{width:100%;padding:.85em 1.1em;border-radius:12px;border:1.5px solid rgba(58,15,35,.25);background:rgba(255,255,255,.55);font:inherit;color:var(--ink)}
+.card{background:var(--cream);border-radius:22px;padding:34px;box-shadow:0 30px 60px -30px rgba(58,15,35,.45)}
+.card h3{font-size:2.1rem;margin:8px 0 12px}
+.card ul{list-style:none;display:grid;gap:7px;margin:14px 0 22px;color:var(--mute);font-size:.94rem}
+.card li::before{content:"✦ ";color:var(--pink)}
+.card .btn{width:100%;justify-content:center}
+.card .fine{font-size:.74rem;color:var(--mute);margin-top:12px;text-align:center}
+
+/* visit */
+.visit{padding:100px 0 0;background:var(--cream);position:relative;overflow:hidden}
+.vgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end}
+.info{display:grid;gap:18px;margin-top:30px}
+.info div{padding-top:16px;border-top:1px solid rgba(58,15,35,.16)}
+.info small{display:block;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);font-weight:500;margin-bottom:4px}
+.info p,.info a{font-size:1.08rem;text-decoration:none}
+.vcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.big{font-family:var(--script);font-size:clamp(7rem,28vw,26rem);line-height:.8;color:var(--pink);opacity:.14;text-align:center;white-space:nowrap;margin-top:50px;margin-bottom:-.12em;pointer-events:none;user-select:none}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:20px 0 90px;font-size:.78rem;color:var(--mute);position:relative}
+
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);z-index:100;background:#fff;color:var(--ink);padding:.9em 1.4em;border-radius:14px;box-shadow:0 20px 50px -10px rgba(0,0,0,.4);font-size:.9rem;max-width:min(92vw,380px);text-align:center;opacity:0;pointer-events:none;transition:.5s var(--ease)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.mcta{position:fixed;inset:auto 12px 12px 12px;z-index:60;display:none;gap:10px;padding:8px;border-radius:99px;background:rgba(58,15,35,.94);backdrop-filter:blur(12px);box-shadow:0 10px 40px -8px rgba(0,0,0,.6)}
+.mcta a{flex:1;text-align:center;padding:.85em 1em;border-radius:99px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.3);font-weight:500}
+.mcta a.p{background:var(--pink);border-color:var(--pink)}
+
+@media(max-width:900px){
+  nav ul{display:none}
+  .hero{padding-top:92px}
+  .hero .wrap,.hgrid,.mgrid,.sgrid,.ogrid,.vgrid{grid-template-columns:1fr;gap:36px}
+  .hero .wrap{min-height:0}
+  .arch{max-width:420px;margin:0 auto;width:100%}
+  .badge{left:6px;bottom:20px}
+  .hphoto{order:-1}
+  .mphoto{max-width:420px;margin:0 auto;width:100%}
+  .pair{max-width:420px}
+  .mcta{display:flex}
+  .hour,.sec{padding:70px 0}
+  .sky{height:100px}.orb{width:64px;height:64px;margin-top:-32px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01s!important}
+  .neon{opacity:1}.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true"><div class="neon">Café Pink<small>Hauz Khas Village</small></div><button id="skip" type="button">Skip</button></div>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">Café Pink</a>
+  <ul><li><a href="#hour">Pick your hour</a></li><li><a href="#menu">Menu</a></li><li><a href="#space">The space</a></li><li><a href="#occ">Host with us</a></li><li><a href="#visit">Visit</a></li></ul>
+  <a class="btn btn-pink" href="#" data-wa="Hi Café Pink! I'd like to book a table.">Book a table</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Café Pink by The Bay · Hauz Khas Village</p>
+      <h1 style="margin-top:18px"><span>Where <em>pink</em></span><span>walls tell</span><span>stories.</span></h1>
+      <p class="sub">Graffiti, blue-and-white tiles, a staircase that lights up and a terrace that goes gold at sunset. Come for coffee, stay for the evening.</p>
+      <div class="row">
+        <a class="btn btn-pink" href="#" data-wa="Hi Café Pink! I'd like to book a table.">Book a table</a>
+        <a class="btn btn-line" href="#hour">Pick your hour</a>
+      </div>
+      <div class="chips"><span><b>★</b> Rated 4.6 on Google</span><span>1,700+ reviews</span><span>Open daily from 11 AM</span></div>
+    </div>
+    <div style="position:relative">
+      <div class="arch">
+        <div class="sign" aria-hidden="true">Café Pink</div>
+        <img src="img/terrace.jpg" alt="Pink cane chairs and marble tables on the Café Pink terrace at sunset under fairy lights">
+      </div>
+      <div class="badge"><b>5:30 PM</b>Best seat on the terrace</div>
+    </div>
+  </div>
+  <div class="scal" aria-hidden="true"></div>
+</header>
+
+<section class="hour" id="hour" data-h="0">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow"><b>01</b>Pick your hour</p>
+      <h2 style="margin:12px 0 30px">The café changes <em>with the day.</em></h2>
+      <div class="sky" aria-hidden="true"><div class="stars"></div><div class="orb"></div></div>
+    </div>
+    <div class="hgrid rv">
+      <div class="hcopy">
+        <div class="times" id="times" role="group" aria-label="Time of day"></div>
+        <h3 id="ht"></h3>
+        <p id="hp"></p>
+        <a class="btn" id="hb" href="#">Book this hour</a>
+      </div>
+      <div class="hphoto" id="hphoto">
+        <img src="img/caddy.jpg" alt="Wooden Café Pink table caddy with sauces on a marble table" class="on">
+        <img src="img/terrace.jpg" alt="Café Pink terrace at sunset">
+        <img src="img/stairs.jpg" alt="Café Pink white staircase with lit niches under fairy lights at night">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="menu">
+  <div class="wrap mgrid">
+    <div class="rv">
+      <p class="eyebrow"><b>02</b>The menu</p>
+      <h2 style="margin-top:12px">Good food,<br><em>better moods.</em></h2>
+      <div class="tabs" role="group" aria-label="Menu"><button type="button" aria-pressed="true" data-m="0">Food</button><button type="button" aria-pressed="false" data-m="1">Coffee &amp; drinks</button></div>
+      <ul class="mlist" id="mlist"></ul>
+      <p class="note">Sample menu. We'd add your real items, prices and specials here.</p>
+    </div>
+    <div class="mphoto rv" id="mphoto">
+      <img src="img/pizza.jpg" alt="Margherita pizza with basil and tomato" class="on">
+      <img src="img/caddy.jpg" alt="Table at Café Pink with condiments and a water bottle">
+    </div>
+  </div>
+</section>
+
+<section class="sec space" id="space">
+  <div class="wrap sgrid">
+    <div class="pair rv">
+      <img class="a" src="img/angel.jpg" alt="White angel statue holding a coffee cup and roses beside a blue-and-white painted arch">
+      <img class="b" src="img/stairs.jpg" alt="Café Pink staircase with glowing niches">
+    </div>
+    <div class="rv">
+      <p class="eyebrow"><b>03</b>The space</p>
+      <h2 style="margin-top:12px">Corners worth<br>a <em>photo.</em></h2>
+      <ul class="corners">
+        <li>An angel holding a coffee cup, with roses.</li>
+        <li>Blue-and-white tiles and painted arches.</li>
+        <li>A staircase with glowing niches and fairy lights.</li>
+        <li>A terrace that catches the last of the sun.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec occ" id="occ">
+  <div class="wrap ogrid">
+    <div class="rv">
+      <p class="eyebrow"><b>04</b>Host with us</p>
+      <h2 style="margin-top:12px">Kitty parties,<br>birthdays, <em>brunch dates.</em></h2>
+      <div class="opts">
+        <div><div class="lab">What's the plan</div><div class="cl" id="occs"></div></div>
+        <div><div class="lab">How many people</div><div class="qty"><input type="range" id="gq" min="2" max="40" value="8" aria-label="Guests"><b id="gv">8</b></div></div>
+        <div><div class="lab">Date &amp; time (optional)</div><input class="field" id="gd" placeholder="e.g. Saturday, 4 PM"></div>
+      </div>
+    </div>
+    <div class="card rv">
+      <p class="eyebrow">Your enquiry</p>
+      <h3 id="ch"></h3>
+      <ul id="cl2"></ul>
+      <a class="btn btn-pink" id="cb" href="#">Send on WhatsApp</a>
+      <p class="fine">Opens WhatsApp with your message ready to send.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap vgrid">
+    <div class="rv">
+      <p class="eyebrow"><b>05</b>Visit</p>
+      <h2 style="margin-top:12px">Ground floor,<br><em>Hauz Khas Village.</em></h2>
+      <div class="info">
+        <div><small>Address</small><p>Building no. 21, Ground floor, Hauz Khas Village, New Delhi 110016</p></div>
+        <div><small>Reservations</small><a href="tel:+919667735763">+91 96677 35763</a></div>
+        <div><small>Hours</small><p>Open daily from 11 AM</p></div>
+        <div><small>Instagram</small><a href="https://www.instagram.com/cafepink.hkv/" target="_blank" rel="noopener">@cafepink.hkv</a></div>
+      </div>
+      <div class="vcta"><a class="btn btn-pink" href="#" data-wa="Hi Café Pink! I'd like to book a table.">Book on WhatsApp</a><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Cafe+Pink+Hauz+Khas+Village+Delhi" target="_blank" rel="noopener">Get directions</a></div>
+    </div>
+    <div class="rv"><div class="arch" style="max-width:380px;margin-left:auto"><img src="img/angel.jpg" alt="" style="object-position:60% 40%"></div></div>
+  </div>
+  <div class="big" aria-hidden="true">Café Pink</div>
+  <div class="wrap foot"><span>© Café Pink by The Bay</span><span>Hauz Khas Village, Delhi</span></div>
+</section>
+
+<div class="mcta"><a href="tel:+919667735763">Call</a><a class="p" href="#" data-wa="Hi Café Pink! I'd like to book a table.">WhatsApp</a></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const NUM='919667735763';
+const $=s=>document.querySelector(s);
+const wa=t=>'https://wa.me/'+NUM+'?text='+encodeURIComponent(t);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-wa]');if(a){e.preventDefault();window.open(wa(a.dataset.wa),'_blank','noopener')}});
+
+/* loader */
+const L=$('#loader');
+function hideL(){L.classList.add('off');try{sessionStorage.setItem('cp','1')}catch(e){}}
+let seen=false;try{seen=sessionStorage.getItem('cp')==='1'}catch(e){}
+if(seen){L.classList.add('off')}else{setTimeout(hideL,2300);$('#skip').onclick=hideL}
+
+/* nav + reveal */
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+/* pick your hour */
+const H=[
+ {k:'Brunch · 11 AM',t:'Slow tables, pink chairs, strong coffee.',p:'Daylight on the tiles, a long catch-up and something warm from the kitchen. The easiest hour to get a table.',b:'around 12 PM (brunch)'},
+ {k:'Golden hour · 5:30 PM',t:'The terrace turns gold.',p:'Fairy lights flick on as the sun goes down behind the trees. This is the hour people take their photos, so book ahead.',b:'around 5:30 PM (golden hour)'},
+ {k:'After dark · 9 PM',t:'Lights, stairs, music.',p:'The staircase glows, the neon sign takes over and the evening gets louder. Good for birthdays and friends nights.',b:'around 9 PM (after dark)'}
+];
+const sec=$('.hour'),times=$('#times'),imgs=[...document.querySelectorAll('#hphoto img')];
+H.forEach((h,i)=>{const b=document.createElement('button');b.type='button';b.textContent=h.k;b.setAttribute('aria-pressed',i===0);b.onclick=()=>setH(i);times.appendChild(b)});
+function setH(i){
+  sec.dataset.h=i;[...times.children].forEach((b,j)=>b.setAttribute('aria-pressed',j===i));
+  imgs.forEach((m,j)=>m.classList.toggle('on',j===[0,1,2][i]));
+  $('#ht').textContent=H[i].t;$('#hp').textContent=H[i].p;
+  $('#hb').onclick=e=>{e.preventDefault();window.open(wa("Hi Café Pink! I'd like to book a table for "+H[i].b+"."),'_blank','noopener')};
+}
+setH(0);
+let auto=setInterval(()=>setH((+sec.dataset.h+1)%3),6500);
+times.addEventListener('click',()=>clearInterval(auto));
+
+/* menu */
+const M=[
+ [['Margherita pizza','tomato, mozzarella, basil'],['Pasta of the day','ask your server'],['Brunch plate','eggs, toast, sides'],['Fries & dips','to share']],
+ [['Pink coffee','the house signature'],['Iced latte','classic or flavoured'],['Fresh juice','seasonal'],['Mocktails','ask for today\'s list']]
+];
+const ml=$('#mlist'),mi=[...document.querySelectorAll('#mphoto img')];
+function setM(i){ml.innerHTML=M[i].map(r=>`<li><span>${r[0]}</span><small>${r[1]}</small></li>`).join('');document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.m===i));mi.forEach((m,j)=>m.classList.toggle('on',j===i))}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setM(+b.dataset.m));setM(0);
+
+/* occasions */
+const OC=['Kitty party','Birthday','Brunch date','Friends night','Something else'];let oc=OC[0];
+function oChips(){$('#occs').innerHTML='';OC.forEach(n=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=n;b.setAttribute('aria-pressed',n===oc);b.onclick=()=>{oc=n;oChips();oUpd()};$('#occs').appendChild(b)})}
+function oUpd(){const g=+$('#gq').value,d=$('#gd').value.trim();$('#gv').textContent=g;$('#ch').textContent=oc;$('#cl2').innerHTML=`<li>${g} people</li>${d?`<li>${d.replace(/</g,'&lt;')}</li>`:''}<li>Table or section held on request</li>`;
+ $('#cb').onclick=e=>{e.preventDefault();window.open(wa(`Hi Café Pink! I'd like to plan a ${oc.toLowerCase()} for ${g} people${d?' ('+d+')':''}. Could you share availability and options?`),'_blank','noopener')}}
+oChips();oUpd();$('#gq').oninput=oUpd;$('#gd').oninput=oUpd;
+</script>
+</body>
+</html>
